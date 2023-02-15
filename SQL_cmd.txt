@@ -1,0 +1,15 @@
+ -- SELECT * FROM products WHERE price > 20 ORDER BY created_at DESC;
+
+-- SELECT * FROM products WHERE price > 10 LIMIT 2;
+
+-- SELECT * FROM products ORDER BY id LIMIT 5;
+
+INSERT INTO products (name, price, inventory) VALUES ('tortilla', 4, 1000); 
+
+INSERT INTO products (name, price, inventory) VALUES ('plane', 14, 2453100), ('laptop', 450, 24), ('monitor', 120, 4) RETURNING *; 
+
+SELECT * FROM products;
+
+DELETE FROM products WHERE inventory = 0 RETURNING *;
+
+UPDATE products SET name ='movie ticket', price = 10 WHERE id = 11;
