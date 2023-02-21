@@ -14,9 +14,9 @@ def get_db():
     finally:
         db.close()
         
-DATABASE_PSSWRD = env.str("DATABASE_PASSWORD")
 
-SQLALCHEMY_DATABASE_URL = f'postgresql://{settings.database_username}:{settings.database_password}@{settings.database_hostname}:{settings.database_port}/{settings.database_name}' # template : 'postgresql://<username>:<password>@<ip-address/hostname>/<database_name>'
+SQLALCHEMY_DATABASE_URL = f'postgresql://{settings.database_username}:{settings.database_password}@{settings.database_hostname}:{settings.database_port}/{settings.database_name}' 
+# template : 'postgresql://<username>:<password>@<ip-address/hostname>/<database_name>'
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL) # permet d'établir une connexion
 

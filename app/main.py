@@ -12,7 +12,7 @@ env.read_env()
 """
     Cours:
     Pour lancer serveur : uvicorn main:app
-    avec reload (pas besoin de restart serveur à chaque modif): uvicorn main:app --reload
+    avec reload (pas besoin de restart serveur à chaque modif): uvicorn main:app --reload or / uvicorn app.main:app --reload
 
     A chaque changement il faut restart le serveur
 
