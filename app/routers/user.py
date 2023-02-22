@@ -14,9 +14,9 @@ def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
     #hash the password - user.password
     hashed_password = utils.hash(user.password)
     user.password = hashed_password
-
-    new_user = models.User(**user.dict())
     
+    new_user = models.User(**user.dict()) ####  Le double astérisque ** est utilisé pour faciliter la transmission des données d'un dictionnaire à la méthode User
+    ### Le double astérisque ** est utilisé pour déballer un dictionnaire en tant qu'arguments nommés lors d'un appel de fonction.
     db.add(new_user)
     db.commit()
     db.refresh(new_user)
