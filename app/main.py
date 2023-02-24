@@ -3,6 +3,7 @@ from environs import Env
 from app.database import engine
 from app.routers import post, user, auth, vote
 from fastapi.middleware.cors import CORSMiddleware
+from . import models
 
 
 env = Env()
@@ -19,7 +20,7 @@ env.read_env()
     Attention dans le pathing, s'il est le même, par ex get("/") ou get("/posts"), cela renverra la premier référence au path
 """
 
-# models.Base.metadata.create_all(bind=engine) #NO LONGER NEED IT SINCE WE'VE GOT ALEMBIC
+models.Base.metadata.create_all(bind=engine) #NO LONGER NEED IT SINCE WE'VE GOT ALEMBIC
 
 app = FastAPI()
 
